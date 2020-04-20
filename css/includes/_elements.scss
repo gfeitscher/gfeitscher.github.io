@@ -1,0 +1,202 @@
+
+
+//////////////////////////////////////////////////
+//// SPECIFIC STYLES for single HTML elements ////
+//////////////////////////////////////////////////
+
+.button {
+  // font
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: calc(24px + 0.5vmin);
+  font-weight: bold;
+  
+  // dimensions
+  padding: 0.5rem;
+  width: 40%;
+  max-width: 240px;
+  min-width: 200px;
+    
+  // colors
+  color: var(--color_primary);
+  background: transparent;
+  border: 2px solid var(--color_primary);
+  border-radius: calc(4px + 0.2vmin);
+}
+
+.button:hover {
+  color: white;
+  background: var(--color_primary);
+  border: 2px solid transparent;  
+}
+
+.button:focus {
+    outline: 0px;    
+}
+
+.buttonNoBorder {
+    // colors
+  color: var(--color_primary);
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: calc(4px + 0.2vmin);
+}
+
+.buttonMoreSettings {
+  // font
+  font-size: calc(14px + 0.5vmin);
+  
+  // positioning
+  margin-top: 2em;
+  margin-bottom: 1em;
+
+}
+
+.buttonAudio {
+ 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  border: 2px solid transparent;
+
+}
+
+.buttonAudio:hover {  
+  border: 2px solid var(--color_bg);
+}
+
+.buttonAudio:focus {
+    outline: 0px;    
+}
+
+.buttonFooter {
+  color: var(--color_overlay_text);
+  font-size: calc(12px + 0.25vmin);
+  border: 2px solid transparent;
+  
+  padding: 0.25em;
+  
+  
+  
+}
+
+.buttonFooter:hover {  
+  border: 2px solid var(--color_bg);
+}
+
+.iconAudio {
+  font-size: calc(18px + 0.5vmin);
+}
+
+.pAudio {
+  margin: 0;
+  font-size: calc(12px + 0.5vmin);
+  text-align: center;
+  min-width: 1.75em;
+  
+ 
+  overflow: visible;
+  flex: 1;
+  opacity: 1;
+
+}
+
+
+h1 {
+  font-family: 'Halant', serif;
+  margin: 0.3em 0 0.3em 0;
+  text-decoration: underline;  
+}
+
+.subtitle {
+  margin-top: -0.75em;
+  font-family: 'Halant', serif;
+}
+
+/*.timeRemaining {
+  margin: 0;  
+  font-size: calc(20px + 0.5vmin);  
+}*/
+
+.pInstruction {
+  font-size: calc(30px + 0.5vmin);
+  font-weight: bold;
+  //color: rgba(255,255,255,0.9);
+  color: rgba(230,230,230,0.9);
+  
+   text-shadow: 0px 0px 0.4em rgba(0,0,0,0.8), 0px 0px 0.1em rgba(0,0,0,0.9);
+  
+    letter-spacing: 0.05em;
+  //background: var(--color_overlay_bg);
+  
+  //text-shadow: 0px 0px 0.2em #000000, 1px 0px 0.0em #666, -1px 0px 0.0em #666, 0px 1px 0.0em #666, 0px -1px 0.0em #666; 
+  
+ // text-shadow: 0 -1px 6px var(--color_primary_dark), 1px 0 6px var(--color_primary_dark), 0 1px 6px var(--color_primary_dark), -1px 0 6px var(--color_primary_dark), 0px 0px 0.3em #000000;
+  
+  border-radius: calc(20px + 0.5vmin);
+  padding: 0.5em;
+  //box-shadow: 0px 0px 64px -20px ;
+}
+
+.pInstruction-trans-inhale {
+  transition: letter-spacing calc( var(--inhaleRatio) * 60000ms / var(--bpm)) ease-out,
+              font-size calc( var(--inhaleRatio) * 60000ms / var(--bpm)) ease-out,
+              opacity calc(1ms * var(--fadeDurationInstruction)) ease-out;
+  letter-spacing: 0.2em;
+  font-size: calc(38px + 0.5vmin);
+  
+}
+
+.pInstruction-trans-exhale {  
+  transition: letter-spacing calc( calc(1 - var(--inhaleRatio)) * 60000ms / var(--bpm))  ease-out,
+              font-size calc( calc(1 - var(--inhaleRatio)) * 60000ms / var(--bpm)) ease-out,
+              opacity calc(1ms * var(--fadeDurationInstruction)) ease-out;
+  letter-spacing: 0.05em;
+  font-size: calc(26px + 0.5vmin);
+  
+}
+
+
+
+.pSettings{
+  padding-top: 2.5em;
+  padding-bottom: 0.75em;
+  margin: 0;
+}
+
+.ThemeSwitcher {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: center;
+}
+
+.themeColorPreviewContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  //border: 2px solid var(--color_font);
+  //width: 84px;
+  height: 28px;
+  margin-top: 0.75em;
+}
+
+.themeColorPreview{
+  width: 28px;
+  height: 28px;
+  border: 2px solid lightgray;
+  border-radius: 50%;
+  margin-left: 0.5em;
+  //box-shadow: 0px 0px 1px 0px;
+}
+
+.color1 { background: var(--color_primary); }
+.color2 { background: var(--color_secondary); }
+.color3 { background: var(--color_tertiary); }
+
+.pImpressum {
+  text-align: left;
+  margin: 1.5em;
+}
+
+

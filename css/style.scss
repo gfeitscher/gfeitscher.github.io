@@ -1,0 +1,76 @@
+@import "includes/variables";
+@import "includes/layout";
+@import "includes/elements";
+@import "includes/slider";
+@import "includes/animation-circles";
+
+/////////////////////////////////////////
+//// GENERAL STYLES for all elements ////
+/////////////////////////////////////////
+
+.center-maxwidth {
+// center the elements in the flex-column and limit their width
+  max-width: var(--maxWidth);
+  width: 100%;
+  align-self: center;
+}
+
+.center-maxwidth-inner {
+// center the elements in the flex-column and limit their width
+  max-width: var(--maxWidth-inner);
+  width: 60%;
+  align-self: center;
+}
+
+.hide { display: none; }
+
+.trans {
+  transition: all 0.7s ease-out;
+}
+
+.trans-quick {
+  transition: all 0.1s ease-out;
+}
+
+.trans-slow {
+  transition: all 1.4s ease-out;
+}
+
+
+.fade-instruction {
+
+  opacity: 0;
+  // hack to fix Firefox-stuttering
+  //-moz-transform: rotate(0.001deg);
+}
+
+.collapsed {
+  overflow: hidden;
+  flex: 0;
+  opacity: 0;
+}
+
+.overlay {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: calc(16px + 0.5vmin);
+  //font-weight: bold;
+  
+  // colors
+  color: var(--color_overlay_text);
+  background: var(--color_overlay_bg);
+  
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  border-radius: calc(2em + 0.2vmin);  
+    
+}
+
+.stretch {
+  letter-spacing: 0.5em;
+}
+
+.trans-stretch {
+  transition: letter-spacing 5s ease-out, opacity 0.7s ease-out;
+}
+
+
+

@@ -1,0 +1,165 @@
+@import "includes/variables";
+
+////////////////////////////////////
+///// LAYOUT OF THE COMPONENTS /////
+////////////////////////////////////
+///// == define the general layout of the app and the react components, mostly with flex
+
+body {  
+  margin: 0;
+}
+
+.flex-container {
+// this is the main flex containter which houses most of the components
+  position: relative;  
+  
+  // make it flex
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  
+  // define screen dimensions of app
+  height: 103vh;
+  min-height: 880px;
+  min-width: 350px;
+  overflow: hidden;  
+  //max-width: var(--maxWidth);
+  
+  
+  // center the app container
+  margin-left: auto ;
+  margin-right: auto ;
+  
+  // center the content  
+  text-align: center;
+  
+  // color styling
+  background-image: linear-gradient(to bottom right, var(--color_bg), transparent, var(--color_bg));
+  color: var(--color_font);
+  
+  // set fonts (inherited by all children)
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: calc(14px + 0.5vmin);
+}
+
+.Header { 
+  overflow: visible;
+  flex: 0; 
+}
+
+.Settings { 
+  overflow: visible;
+  flex: 2;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.AdvancedSettings {
+  overflow: visible;
+  flex: 1;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+}
+
+.StartButton { 
+  overflow: visible;
+  flex: 1;
+  padding-top: 3em; 
+}
+
+.StopButton { 
+  overflow: visible;
+  flex: 1;
+  padding-top: 0em; 
+}
+
+.NewButton {
+  overflow: visible;
+  flex: 1;
+  padding-top: 0.5em; 
+  //padding-bottom: 1em; 
+}
+
+.Instruction {  
+  overflow: visible;
+  position: absolute;
+  
+  top: 30vh;
+  margin: 0;
+  width: 100%;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+  opacity: 0.85;
+}
+
+.Countdown {
+  overflow: visible;
+  flex: 0;  
+}
+
+.AudioPlayer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+
+.Animation { 
+  overflow: visible;
+  flex: 8;
+
+  display: flex;  
+  flex-direction: column;
+  justify-content: end;
+}
+
+.Footer { 
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  
+  overflow: visible;
+  background-color: var(--color_overlay_bg);
+  color: var(--color_text);
+
+  text-align: center;  
+}
+
+.OverlayContainerRight {
+  position: fixed;
+  bottom: calc(32px + 0.75vw);
+  right: calc(8px + 0.5vw);  
+  height: 3em;
+  
+  text-align: center;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;  
+}
+
+.OverlayContainerLeft {
+  position: fixed;
+  bottom: calc(32px + 0.75vw);  
+  left: calc(8px + 0.5vw);  
+  height: 3em;
+  
+  text-align: center;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;  
+}
+
+.Impressum {
+  overflow: scroll;
+}

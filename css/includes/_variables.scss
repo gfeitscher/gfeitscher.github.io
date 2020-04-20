@@ -1,0 +1,31 @@
+////////////////////////////////////////////
+///// SCSS VARIABLES injected by React /////
+////////////////////////////////////////////
+
+:root {
+  
+  --maxWidth: 800px;
+  --maxWidth-inner: 500px;
+  
+  // these css variables define the animations. the values below are just dummies. the actual values are injected into the stylesheet by React
+  --bpm: 5.5;
+  --inhaleRatio: 0.45;
+  --fadeDurationInstruction: 200;
+  
+  //circle dimensions and movement
+  --circleOpacityOffset: -0.0;
+  --innerCircleMinSize: 0.0;
+  --innerCircleMaxSize: 0.0;
+  --innerCircleYMove: 0.5;
+  
+  // colors:
+  --color_primary: #26595F;
+  --color_primary_dark: #06393F;
+  --color_secondary: #008000;
+  --color_tertiary: #FFFF00;
+  --color_bg: whitesmoke;
+  --color_font: black;
+  --color_overlay_text: whitesmoke;
+  --color_overlay_bg: rgba(0,0,0,0.5);
+
+}
