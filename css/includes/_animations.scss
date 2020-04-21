@@ -95,3 +95,60 @@
     opacity: calc(0.9 + var(--circleOpacityOffset));
   }
 }
+
+////////////////////////////////
+//// ANIMATION INSTRUCTIONS ////
+////////////////////////////////
+
+.animate-instruction-inhale {
+  animation:  anim-instruction-inhale calc( var(--inhaleRatio) * 60000ms / var(--bpm)) ease-in-out both;
+}
+
+.animate-instruction-exhale {
+  animation:  anim-instruction-exhale calc( calc(1 - var(--inhaleRatio)) * 60000ms / var(--bpm)) ease-in-out both;
+}
+
+@keyframes anim-instruction-inhale {
+  0% {              
+    letter-spacing: 0.05em;
+    font-size: calc(28px + 0.5vmin);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }  
+  100% {              
+    letter-spacing: 0.2em;
+    font-size: calc(38px + 0.5vmin);
+    opacity: 0;
+  }
+}
+
+@keyframes anim-instruction-exhale {
+  0% {              
+    letter-spacing: 0.2em;
+    font-size: calc(38px + 0.5vmin);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {              
+    letter-spacing: 0.05em;
+    font-size: calc(28px + 0.5vmin);
+    opacity: 0;
+  }
+}
+

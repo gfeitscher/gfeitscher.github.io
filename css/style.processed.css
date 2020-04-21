@@ -316,24 +316,6 @@ h1 {
   padding: 0.5em;
 }
 
-/*
-.pInstruction-trans-inhale {
-  transition: letter-spacing calc( var(--inhaleRatio) * 60000ms / var(--bpm)) ease-out,
-              font-size calc( var(--inhaleRatio) * 60000ms / var(--bpm)) ease-out,
-              opacity calc(1ms * var(--fadeDurationInstruction)) ease-out;
-  letter-spacing: 0.2em;
-  font-size: calc(38px + 0.5vmin);
-  
-}
-
-.pInstruction-trans-exhale {  
-  transition: letter-spacing calc( calc(1 - var(--inhaleRatio)) * 60000ms / var(--bpm))  ease-out,
-              font-size calc( calc(1 - var(--inhaleRatio)) * 60000ms / var(--bpm)) ease-out,
-              opacity calc(1ms * var(--fadeDurationInstruction)) ease-out;
-  letter-spacing: 0.05em;
-  font-size: calc(26px + 0.5vmin);
-  
-}*/
 :root {
   --maxWidth: 800px;
   --maxWidth-inner: 500px;
@@ -603,5 +585,57 @@ input[type=range]:focus::-ms-fill-upper {
   50% {
     top: 6.5vw;
     opacity: calc(0.9 + var(--circleOpacityOffset));
+  }
+}
+
+.animate-instruction-inhale {
+  animation: anim-instruction-inhale calc( var(--inhaleRatio) * 60000ms / var(--bpm)) ease-in-out both;
+}
+
+.animate-instruction-exhale {
+  animation: anim-instruction-exhale calc( calc(1 - var(--inhaleRatio)) * 60000ms / var(--bpm)) ease-in-out both;
+}
+
+@keyframes anim-instruction-inhale {
+  0% {
+    letter-spacing: 0.05em;
+    font-size: calc(28px + 0.5vmin);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    letter-spacing: 0.2em;
+    font-size: calc(38px + 0.5vmin);
+    opacity: 0;
+  }
+}
+
+@keyframes anim-instruction-exhale {
+  0% {
+    letter-spacing: 0.2em;
+    font-size: calc(38px + 0.5vmin);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    letter-spacing: 0.05em;
+    font-size: calc(28px + 0.5vmin);
+    opacity: 0;
   }
 }
