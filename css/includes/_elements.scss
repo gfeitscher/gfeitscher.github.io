@@ -118,44 +118,6 @@ h1 {
   font-size: calc(20px + 0.5vmin);  
 }*/
 
-.pInstruction {
-  font-size: calc(30px + 0.5vmin);
-  font-weight: bold;
-  //color: rgba(255,255,255,0.9);
-  color: rgba(230,230,230,0.9);
-  
-   text-shadow: 0px 0px 0.4em rgba(0,0,0,0.8), 0px 0px 0.1em rgba(0,0,0,0.9);
-  
-    letter-spacing: 0.05em;
-  //background: var(--color_overlay_bg);
-  
-  //text-shadow: 0px 0px 0.2em #000000, 1px 0px 0.0em #666, -1px 0px 0.0em #666, 0px 1px 0.0em #666, 0px -1px 0.0em #666; 
-  
- // text-shadow: 0 -1px 6px var(--color_primary_dark), 1px 0 6px var(--color_primary_dark), 0 1px 6px var(--color_primary_dark), -1px 0 6px var(--color_primary_dark), 0px 0px 0.3em #000000;
-  
-  border-radius: calc(20px + 0.5vmin);
-  padding: 0.5em;
-  //box-shadow: 0px 0px 64px -20px ;
-}
-
-.pInstruction-trans-inhale {
-  transition: letter-spacing calc( var(--inhaleRatio) * 60000ms / var(--bpm)) ease-out,
-              font-size calc( var(--inhaleRatio) * 60000ms / var(--bpm)) ease-out,
-              opacity calc(1ms * var(--fadeDurationInstruction)) ease-out;
-  letter-spacing: 0.2em;
-  font-size: calc(38px + 0.5vmin);
-  
-}
-
-.pInstruction-trans-exhale {  
-  transition: letter-spacing calc( calc(1 - var(--inhaleRatio)) * 60000ms / var(--bpm))  ease-out,
-              font-size calc( calc(1 - var(--inhaleRatio)) * 60000ms / var(--bpm)) ease-out,
-              opacity calc(1ms * var(--fadeDurationInstruction)) ease-out;
-  letter-spacing: 0.05em;
-  font-size: calc(26px + 0.5vmin);
-  
-}
-
 
 
 .pSettings{
@@ -199,4 +161,45 @@ h1 {
   margin: 1.5em;
 }
 
+
+
+
+
+.pInstruction {
+  font-size: calc(30px + 0.5vmin);
+  font-weight: bold;
+  color: var(--color_bg);
+  //color: rgba(230,230,230,1.0);
+  
+   text-shadow: 0px 0px 0.4em rgba(0,0,0,0.8), 0px 0px 0.1em rgba(0,0,0,0.9);
+  
+    letter-spacing: 0.05em;
+  //background: var(--color_overlay_bg);
+  
+  //text-shadow: 0px 0px 0.2em #000000, 1px 0px 0.0em #666, -1px 0px 0.0em #666, 0px 1px 0.0em #666, 0px -1px 0.0em #666; 
+  
+ // text-shadow: 0 -1px 6px var(--color_primary_dark), 1px 0 6px var(--color_primary_dark), 0 1px 6px var(--color_primary_dark), -1px 0 6px var(--color_primary_dark), 0px 0px 0.3em #000000;
+  
+  border-radius: calc(20px + 0.5vmin);
+  padding: 0.5em;
+  //box-shadow: 0px 0px 64px -20px ;
+}
+/*
+.pInstruction-trans-inhale {
+  transition: letter-spacing calc( var(--inhaleRatio) * 60000ms / var(--bpm)) ease-out,
+              font-size calc( var(--inhaleRatio) * 60000ms / var(--bpm)) ease-out,
+              opacity calc(1ms * var(--fadeDurationInstruction)) ease-out;
+  letter-spacing: 0.2em;
+  font-size: calc(38px + 0.5vmin);
+  
+}
+
+.pInstruction-trans-exhale {  
+  transition: letter-spacing calc( calc(1 - var(--inhaleRatio)) * 60000ms / var(--bpm))  ease-out,
+              font-size calc( calc(1 - var(--inhaleRatio)) * 60000ms / var(--bpm)) ease-out,
+              opacity calc(1ms * var(--fadeDurationInstruction)) ease-out;
+  letter-spacing: 0.05em;
+  font-size: calc(26px + 0.5vmin);
+  
+}*/
 

@@ -1,0 +1,97 @@
+@import "includes/variables";
+////////////////////////////
+//// ANIMATION 'CIRCLE' ////
+////////////////////////////
+
+.animation-circle { 
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  
+  // set the dimensions of the circles
+  // setting width and padding equal generates a perfect circle
+  width: 300%;
+  padding-top: 300%;
+  left: -100%;
+  top: 5vh; 
+}
+
+///// inner circle /////
+// moves up and down and scales according 
+// to the breathing paramteres set by the user.
+// two different animations are required for the inhale and exhale-animation 
+// (instead of just reversing or merging them into one), because they can be of 
+// different lengths, and the rotation of the inner circle always should be clockwise.
+
+.circle-inner {  
+  background: linear-gradient(var(--color_secondary), var(--color_tertiary)) ;
+  box-shadow: 0px 0px 4em;  
+  transform: scale(1);      
+}
+
+.animate-inner-circle-inhale {
+  animation:  anim-inner-circle-inhale calc( var(--inhaleRatio) * 60000ms / var(--bpm)) ease-in-out forwards;
+}
+
+.animate-inner-circle-exhale {
+  animation:  anim-inner-circle-exhale calc( calc(1 - var(--inhaleRatio)) * 60000ms / var(--bpm)) ease-in-out forwards;
+}
+
+@keyframes anim-inner-circle-inhale {
+  0% {
+    transform: scale(var(--innerCircleMinSize)) rotate(0deg);
+    //opacity: calc(1.0 + var(--circleOpacityOffset));
+    top: calc(var(--innerCircleYMove) * 40vh);
+  }
+  100% {
+    transform: scale(var(--innerCircleMaxSize)) rotate(360deg);
+    //opacity: calc(1.0 + var(--circleOpacityOffset));
+    top: 5vh;
+  }
+}
+  
+@keyframes anim-inner-circle-exhale {
+  0% {
+    transform: scale(var(--innerCircleMaxSize)) rotate(360deg);
+    //opacity: calc(1.0 + var(--circleOpacityOffset));
+    top: 5vh;
+  }
+  100% {
+    transform: scale(var(--innerCircleMinSize)) rotate(720deg);
+    //opacity: calc(1.0 + var(--circleOpacityOffset));
+    top: calc(var(--innerCircleYMove) * 40vh);
+  }
+}
+
+///// outer circle /////
+// justs moves up and down at a predefined pace
+
+.circle-outer {
+  
+  background: radial-gradient(var(--color_primary), var(--color_primary_dark));
+    
+  box-shadow: 0px 0px 1em var(--color_primary);
+  
+  animation-name: anim-outer-circle;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  
+}
+
+@keyframes anim-outer-circle {
+  0%, 100% {
+    top: 4.5vw;
+    opacity: calc(1.0 + var(--circleOpacityOffset));
+  }
+  50% {
+    top: 6.5vw;
+    opacity: calc(0.9 + var(--circleOpacityOffset));
+  }
+}

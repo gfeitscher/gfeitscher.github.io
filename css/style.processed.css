@@ -260,28 +260,6 @@ h1 {
   margin: 0;  
   font-size: calc(20px + 0.5vmin);  
 }*/
-.pInstruction {
-  font-size: calc(30px + 0.5vmin);
-  font-weight: bold;
-  color: rgba(230, 230, 230, 0.9);
-  text-shadow: 0px 0px 0.4em rgba(0, 0, 0, 0.8), 0px 0px 0.1em rgba(0, 0, 0, 0.9);
-  letter-spacing: 0.05em;
-  border-radius: calc(20px + 0.5vmin);
-  padding: 0.5em;
-}
-
-.pInstruction-trans-inhale {
-  transition: letter-spacing calc( var(--inhaleRatio) * 60000ms / var(--bpm)) ease-out, font-size calc( var(--inhaleRatio) * 60000ms / var(--bpm)) ease-out, opacity calc(1ms * var(--fadeDurationInstruction)) ease-out;
-  letter-spacing: 0.2em;
-  font-size: calc(38px + 0.5vmin);
-}
-
-.pInstruction-trans-exhale {
-  transition: letter-spacing calc( calc(1 - var(--inhaleRatio)) * 60000ms / var(--bpm)) ease-out, font-size calc( calc(1 - var(--inhaleRatio)) * 60000ms / var(--bpm)) ease-out, opacity calc(1ms * var(--fadeDurationInstruction)) ease-out;
-  letter-spacing: 0.05em;
-  font-size: calc(26px + 0.5vmin);
-}
-
 .pSettings {
   padding-top: 2.5em;
   padding-bottom: 0.75em;
@@ -326,6 +304,97 @@ h1 {
 .pImpressum {
   text-align: left;
   margin: 1.5em;
+}
+
+.pInstruction {
+  font-size: calc(30px + 0.5vmin);
+  font-weight: bold;
+  color: var(--color_bg);
+  text-shadow: 0px 0px 0.4em rgba(0, 0, 0, 0.8), 0px 0px 0.1em rgba(0, 0, 0, 0.9);
+  letter-spacing: 0.05em;
+  border-radius: calc(20px + 0.5vmin);
+  padding: 0.5em;
+}
+
+/*
+.pInstruction-trans-inhale {
+  transition: letter-spacing calc( var(--inhaleRatio) * 60000ms / var(--bpm)) ease-out,
+              font-size calc( var(--inhaleRatio) * 60000ms / var(--bpm)) ease-out,
+              opacity calc(1ms * var(--fadeDurationInstruction)) ease-out;
+  letter-spacing: 0.2em;
+  font-size: calc(38px + 0.5vmin);
+  
+}
+
+.pInstruction-trans-exhale {  
+  transition: letter-spacing calc( calc(1 - var(--inhaleRatio)) * 60000ms / var(--bpm))  ease-out,
+              font-size calc( calc(1 - var(--inhaleRatio)) * 60000ms / var(--bpm)) ease-out,
+              opacity calc(1ms * var(--fadeDurationInstruction)) ease-out;
+  letter-spacing: 0.05em;
+  font-size: calc(26px + 0.5vmin);
+  
+}*/
+:root {
+  --maxWidth: 800px;
+  --maxWidth-inner: 500px;
+  --bpm: 5.5;
+  --inhaleRatio: 0.45;
+  --fadeDurationInstruction: 200;
+  --circleOpacityOffset: -0.0;
+  --innerCircleMinSize: 0.0;
+  --innerCircleMaxSize: 0.0;
+  --innerCircleYMove: 0.5;
+  --color_primary: #26595F;
+  --color_primary_dark: #06393F;
+  --color_secondary: #008000;
+  --color_tertiary: #FFFF00;
+  --color_bg: whitesmoke;
+  --color_font: black;
+  --color_overlay_text: whitesmoke;
+  --color_overlay_bg: rgba(0,0,0,0.5);
+}
+
+.center-maxwidth {
+  max-width: var(--maxWidth);
+  width: 100%;
+  align-self: center;
+}
+
+.center-maxwidth-inner {
+  max-width: var(--maxWidth-inner);
+  width: 60%;
+  align-self: center;
+}
+
+.hide {
+  display: none;
+}
+
+.trans {
+  transition: all 0.7s ease-out;
+}
+
+.trans-quick {
+  transition: all 0.1s ease-out;
+}
+
+.trans-slow {
+  transition: all 1.4s ease-out;
+}
+
+.collapsed {
+  overflow: hidden;
+  flex: 0;
+  opacity: 0;
+}
+
+.overlay {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: calc(16px + 0.5vmin);
+  color: var(--color_overlay_text);
+  background: var(--color_overlay_bg);
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  border-radius: calc(2em + 0.2vmin);
 }
 
 :root {
@@ -535,59 +604,4 @@ input[type=range]:focus::-ms-fill-upper {
     top: 6.5vw;
     opacity: calc(0.9 + var(--circleOpacityOffset));
   }
-}
-
-.center-maxwidth {
-  max-width: var(--maxWidth);
-  width: 100%;
-  align-self: center;
-}
-
-.center-maxwidth-inner {
-  max-width: var(--maxWidth-inner);
-  width: 60%;
-  align-self: center;
-}
-
-.hide {
-  display: none;
-}
-
-.trans {
-  transition: all 0.7s ease-out;
-}
-
-.trans-quick {
-  transition: all 0.1s ease-out;
-}
-
-.trans-slow {
-  transition: all 1.4s ease-out;
-}
-
-.fade-instruction {
-  opacity: 0;
-}
-
-.collapsed {
-  overflow: hidden;
-  flex: 0;
-  opacity: 0;
-}
-
-.overlay {
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: calc(16px + 0.5vmin);
-  color: var(--color_overlay_text);
-  background: var(--color_overlay_bg);
-  padding: 0.5em 0.5em 0.5em 0.5em;
-  border-radius: calc(2em + 0.2vmin);
-}
-
-.stretch {
-  letter-spacing: 0.5em;
-}
-
-.trans-stretch {
-  transition: letter-spacing 5s ease-out, opacity 0.7s ease-out;
 }

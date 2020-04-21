@@ -9728,7 +9728,7 @@
 	    value: function render() {
 	      return React.createElement(
 	        'div',
-	        { className: 'AdvancedSettings trans center-maxwidth', id: 'AdvancedSettings' },
+	        { className: 'AdvancedSettings trans center-maxwidth collapsed', id: 'AdvancedSettings' },
 	        React.createElement(
 	          'p',
 	          { className: 'pSettings' },
@@ -10370,38 +10370,26 @@
 
 	      var element = document.getElementById("pInstruction");
 
-	      // calculate the duration of the fade-effect on the instruction text and save it to state
-	      this.setState({ fadeDuration: Math.min(this.props.inhaleRatio, 1 - this.props.inhaleRatio) * 60000 * 0.025 });
+	      element.classList.remove("animate-instruction-inhale");
+	      element.classList.remove("animate-instruction-exhale");
 
-	      // fade out current instruction
-	      element.classList.add("fade-instruction");
+	      // if we're not in session ...
+	      if (this.props.appState != APPSTATE_SESSION) {
 
-	      // wait for it to disappear
-	      setTimeout(function () {
-
-	        element.classList.remove("pInstruction-trans-inhale");
-	        element.classList.remove("pInstruction-trans-exhale");
-
-	        // if we're not in session ...
-	        if (_this14.props.appState != APPSTATE_SESSION) {
-	          // ... update the instruction text depending only on the current app state
-	          _this14.setState(function (state) {
-	            return { instruction: INSTRUCTION_STATES[_this14.props.appState] };
+	        // ... update the instruction text depending only on the current app state
+	        this.setState(function (state) {
+	          return { instruction: INSTRUCTION_STATES[_this14.props.appState] };
+	        });
+	      } // but if we are in session
+	      else {
+	          // ... update the instruction text depending on the current app state AND the breath state
+	          this.setState(function (state) {
+	            return { instruction: INSTRUCTION_STATES[_this14.props.appState][_this14.props.breathState] };
 	          });
-	        } // but if we are in session
-	        else {
-	            // ... update the instruction text depending on the current app state AND the breath state
-	            _this14.setState(function (state) {
-	              return { instruction: INSTRUCTION_STATES[_this14.props.appState][_this14.props.breathState] };
-	            });
 
-	            // ... and update the instruction animation,
-	            if (_this14.props.breathState == BREATHSTATE_INHALE) element.classList.add("pInstruction-trans-inhale");else if (_this14.props.breathState == BREATHSTATE_EXHALE) element.classList.add("pInstruction-trans-exhale");
-	          }
-
-	        // and let's fade it in again
-	        element.classList.remove("fade-instruction");
-	      }, this.state.fadeDuration);
+	          // ... and update the instruction animation,
+	          if (this.props.breathState == BREATHSTATE_INHALE) element.classList.add("animate-instruction-inhale");else if (this.props.breathState == BREATHSTATE_EXHALE) element.classList.add("animate-instruction-exhale");
+	        }
 	    }
 	  }, {
 	    key: 'componentDidMount',
@@ -10431,7 +10419,7 @@
 	        ),
 	        React.createElement(
 	          'p',
-	          { className: 'pInstruction pInstruction-trans-inhale', id: 'pInstruction' },
+	          { className: 'pInstruction', id: 'pInstruction' },
 	          React.createElement(
 	            'em',
 	            null,
